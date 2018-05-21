@@ -7,7 +7,7 @@ while read -e ARG && [ "$ARG" ] ; do
         export ${array[0]}=${array[1]}
 done
 
-# Recebendo Variaveis do Asterisk no lan?amento
+# Recebendo Variaveis do Asterisk no lancamento
 echo $agi_request >&2
 echo $agi_channel >&2
 echo $agi_language >&2
@@ -31,7 +31,7 @@ checkresults() {
                                  return;;
                         "520 " ) echo $line >&2
                                  return;;
-                        *      ) echo $line >&2;;       #Continua lendo at? um possivel erro
+                        *      ) echo $line >&2;;       #Continua lendo ate um possivel erro
                                                         #Tipo um "520 End ..."
                 esac
         done
