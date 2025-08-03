@@ -1,6 +1,7 @@
 #!/bin/bash
 
 conect="mysql -uroot -pjefao -e"
+
 declare -a array
 while read -e ARG && [ "$ARG" ] ; do
         array=(` echo $ARG | sed -e 's/://'`)
