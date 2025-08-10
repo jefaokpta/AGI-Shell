@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conect="mysql -uroot -pjefao -e"
+# conect="mysql -uroot -pjefao -e"
 
 declare -a array
 while read -e ARG && [ "$ARG" ] ; do
@@ -38,9 +38,14 @@ checkresults() {
         done
 }
 
-sql=(`$conect "SELECT password FROM VipReal.peers WHERE name = $agi_callerid"`)
-pass=${sql[1]}
+# sql=(`$conect "SELECT password FROM VipReal.peers WHERE name = $agi_callerid"`)
+# pass=${sql[1]}
 
+testeVariavel="valor vindo do AGI"
+
+echo "Atendendo canal" >&2
+echo "answer"
+checkresults
 
 echo "1.  Testando Playback ..." >&2
 echo "STREAM FILE beep \"\""
@@ -59,16 +64,16 @@ echo "SAY NUMBER $agi_extension \"\""
 checkresults
 
 echo "5.  Setando variavel ..." >&2
-echo "set variable Bla $pass"
+echo "set variable \"TESTE\" \"$testeVariavel\""
 checkresults
 
 echo "6.  Testando 'say phonetic' ..." >&2
 echo "say phonetic gsm \"\""
 checkresults
 
-echo "6a.  playback" >&2
-echo "STREAM FILE tt-monkeys \"\" "
-checkresults
+# echo "6a.  playback" >&2
+# echo "STREAM FILE tt-monkeys \"\" "
+# checkresults
 
 echo "" >&2
 echo "verbose $1"
