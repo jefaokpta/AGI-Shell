@@ -76,5 +76,5 @@ checkresults
 # checkresults
 
 echo "" >&2
-echo "verbose $1"
+echo "verbose \"$2\""
 checkresults                                                                                      
